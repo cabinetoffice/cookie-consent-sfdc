@@ -1,0 +1,124 @@
+<apex:component controller="CookiePreferencesController">
+    <h1 class="govuk-heading-xl">
+        Preferences
+    </h1>
+    
+    <p class="govuk-heading-m">
+        Cookies on {!$Label.Cookie_Preferences_Service_Name}
+    </p><br /><br />
+    
+    <h2 class="govuk-heading-l">Cookie settings</h2>
+    <p class="govuk-body">
+        {!$Label.Cookie_Preferences_Service_Description}
+    </p>
+    <br /><br />
+    <apex:form >
+        <apex:outputText rendered="{!StrictlyNecessaryCookieDefinitions.size > 0}">
+            <h2 class="govuk-heading-l">Strictly necessary cookies</h2>
+            <p class="govuk-body">
+                These essential cookies do things like:
+            </p>
+            
+            <ul class="govuk-list govuk-list--bullet">
+                <li class="govuk-!-margin-left-2">remember the notifications you've seen so we do not show them to you again</li>
+                <li class="govuk-!-margin-left-2">remember your progress through a form</li>
+                <li class="govuk-!-margin-left-2">enable core functionality such as website registration, security, network management and accessibility</li>
+            </ul>
+            
+            <p class="govuk-body">
+                Cookies always need to be on however they can be switched off by changing the settings on your browser.
+            </p>
+            
+            <apex:repeat value="{!StrictlyNecessaryCookieDefinitions}" var="def">
+                <h3 class="govuk-heading-m">
+                    {!def.Label}
+                </h3>
+                
+                <apex:outputText styleClass="govuk-body" value="{!def.Description__c}" escape="true" />
+                <br /><br /><br />
+            </apex:repeat>   
+            <br /><br />     
+        </apex:outputText>
+        
+        
+        <apex:outputText rendered="{!SettingsCookieDefinitions.size > 0}">
+            <h2 class="govuk-heading-l">Cookies that remember your settings</h2>
+            <apex:repeat value="{!SettingsCookieDefinitions}" var="def">
+                <h3 class="govuk-heading-m">
+                    {!def.Label}
+                </h3>
+                
+                <apex:outputText styleClass="govuk-body" value="{!def.Description__c}" escape="true" />
+                <br /><br /><br />
+                <div class="govuk-form-group">
+                    <h4 class="govuk-heading-s">
+                        Opt in to all cookies that remember your settings
+                    </h4>
+                    
+                    <apex:inputHidden id="f_settings" value="{!settingsCookiesEnabled}" />
+                    <c:GovukRadio manualValues="On|Off" manualDefault="Off" inline="true" destid="{!$Component.f_settings}" />
+                </div>
+            </apex:repeat>
+            <br /><br />
+        </apex:outputText>
+        
+        
+        <apex:outputText rendered="{!MeasuringCookieDefinitions.size > 0}">
+            <h2 class="govuk-heading-l">Cookies that measure website use</h2>
+            <apex:repeat value="{!MeasuringCookieDefinitions}" var="def">
+                <h3 class="govuk-heading-m">
+                    {!def.Label}
+                </h3>
+                
+                <apex:outputText styleClass="govuk-body" value="{!def.Description__c}" escape="true" />
+                
+                <p class="govuk-body">
+                    We use Google Analytics software (Universal Analytics) to collect anonymised information about how you use this site. We do this to help make sure the site is meeting the needs of its users and to help us make improvements. We do not allow Google to use or share the data about how you use this site.<br /><br />
+                    
+                    Google Analytics stores information about:
+                </p>
+                
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>how you got to the site</li>
+                    <li>the pages you visit on this site and how long you spend on them</li>
+                    <li>what you click on while you’re visiting the site</li>
+                </ul>
+                
+                <div class="govuk-form-group">
+                    <h4 class="govuk-heading-s">
+                        Opt in to all cookies that measure website use
+                    </h4>
+                    
+                    <apex:inputHidden id="f_measuring" value="{!measuringCookiesEnabled}" />
+                    <c:GovukRadio manualValues="On|Off" manualDefault="Off" inline="true" destid="{!$Component.f_measuring}" />
+                </div>
+                <br />
+            </apex:repeat>
+                    </apex:outputText>
+        
+        <apex:outputText rendered="{!CommsCookieDefinitions.size > 0}">
+            <h2 class="govuk-heading-l">Cookies that help with our communications</h2>
+            <apex:repeat value="{!CommsCookieDefinitions}" var="def">
+                <h3 class="govuk-heading-m">
+                    {!def.Label}
+                </h3>
+                
+                <apex:outputText styleClass="govuk-body" value="{!def.Description__c}" escape="true" />                
+                
+                <apex:inputHidden id="f_comms" value="{!commsCookiesEnabled}" />
+                <c:GovukRadio manualValues="On|Off" manualDefault="Off" inline="true" destid="{!$Component.f_comms}" />
+            
+            </apex:repeat>            
+        </apex:outputText>
+
+            <a class="govuk-link" href="{!$Label.Cookie_Preferences_Policy_Page_URL}">Find out more about cookies</a>        
+        <br /><br/>
+        <apex:commandLink styleClass="govuk-button" action="{!save}">
+            Save changes  
+        </apex:commandLink>
+    </apex:form>
+    
+    <p class="govuk-body">
+        Last updated: {!$Label.Cookie_Preferences_Review_Date}
+    </p>
+</apex:component>

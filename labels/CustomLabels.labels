@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>CookiePreferences_Service_Name</fullName>
+        <categories>cookies preferences</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cookie Preferences - Service Name</shortDescription>
+        <value>Nominate UK Honours</value>
+    </labels>
+    <labels>
+        <fullName>Cookie_Preferences_Policy_Page_URL</fullName>
+        <categories>cookies preferences</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cookie Preferences - Policy Page URL</shortDescription>
+        <value>/apex/CookiePolicy</value>
+    </labels>
+    <labels>
+        <fullName>Cookie_Preferences_Preferences_URL</fullName>
+        <categories>cookies preferences</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cookie Preferences - Preferences URL</shortDescription>
+        <value>/apex/CookiePreferences</value>
+    </labels>
+    <labels>
+        <fullName>Cookie_Preferences_Privacy_Notice_URL</fullName>
+        <categories>cookies preferences</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cookie_Preferences_Privacy_Notice_URL</shortDescription>
+        <value>http://gov.uk</value>
+    </labels>
+    <labels>
+        <fullName>Cookie_Preferences_Review_Date</fullName>
+        <categories>cookies preferences</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cookie Preferences - Review Date</shortDescription>
+        <value>10/07/2020</value>
+    </labels>
+    <labels>
+        <fullName>Cookie_Preferences_Service_Description</fullName>
+        <categories>cookies preferences</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cookie Preferences - Service Description</shortDescription>
+        <value>We use two types of cookie some of which support the performance and function of this site. You can choose which cookies you are happy for us to use.</value>
+    </labels>
+    <labels>
+        <fullName>Cookie_Preferences_Service_Name</fullName>
+        <categories>cookies preferences</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cookie Preferences - Service Name</shortDescription>
+        <value>Nominate Someone for a UK Honour</value>
+    </labels>
+    <labels>
+        <fullName>Cookie_Preferences_Service_Owner</fullName>
+        <categories>cookies preference</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cookie Preferences - Service Owner</shortDescription>
+        <value>Honours and Appointments Secretariat</value>
+    </labels>
+</CustomLabels>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Cookie_Section__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Cookie Section</label>
+        <referenceTo>Cookie_Section__mdt</referenceTo>
+        <relationshipLabel>Cookies</relationshipLabel>
+        <relationshipName>Cookies</relationshipName>
+        <required>false</required>
+        <type>MetadataRelationship</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expiration__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Expiration</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Purpose__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Purpose</label>
+        <required>true</required>
+        <type>TextArea</type>
+    </fields>
+    <label>Cookie</label>
+    <listViews>
+        <fullName>All_2</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>Cookie_Section__c</columns>
+        <columns>Expiration__c</columns>
+        <columns>Purpose__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All 2</label>
+    </listViews>
+    <pluralLabel>Cookies</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,181 @@
+<apex:component controller="CookiePreferencesController">
+    <h1 class="govuk-heading-xl">
+        Cookie Policy
+    </h1>
+    
+    <h2 class="govuk-heading-l">
+        Details about cookies on {!$Label.Cookie_Preferences_Service_Name}
+    </h2>
+    <p class="govuk-body">
+        {!$Label.Cookie_Preferences_Service_Name} puts small files (known as 'cookies') onto your computer 
+        to collect information about how you browse the site.<br /><br />
+        Cookies are small text files containing a string of characters that can be placed on your computer or mobile device
+        that uniquely identify your browser or device. Cookies tell us if your computer or device has visited the site before. They help us
+        understand how the site is being used, help you navigate between pages efficiently, help remember your preferences, and
+        generally improve your browsing experience. <br /><br />
+        Cookies help us remember what notifications we send you and make our
+        general communications relevant to you and your interests. Changes made to this policy can be identified by the 'last
+        updated' date at the bottom of this page. Any change to how your cookie data is processed will be promptly reflected in this
+        policy and will immediately apply to you and your data. If these changes affect how your data is processed, the {!$Label.Cookie_Preferences_Service_Owner}
+        will take reasonable steps to let you know. <br /><br />
+        Accepting all cookies via our website banner activates those cookie settings that are listed as optional on this
+        page (that is, not 'strictly necessary'). Your activation of all optional cookies lasts for 3 months and the banner will appear again. This gives you the opportunity
+        to regularly re-visit and adjust your decision. <br /><br />Find out more about how to manage cookies, including how to delete and block them, on the <a class="govuk-link" href="https://ico.org.uk/your-data-matters/online/cookies/">Information Commisioner Office's website</a>.
+        <br /><br />To learn more about how we protect and process your information, see our <a class="govuk-link" href="{!$Label.Cookie_Preferences_Privacy_Notice_URL}">Privacy Notice</a>.
+    </p>
+    
+    <apex:form >
+        <apex:outputText rendered="{!StrictlyNecessaryCookieDefinitions.size > 0}">
+            <h2 class="govuk-heading-l">Strictly necessary cookies</h2>
+            <p class="govuk-body">
+                These cookies do things like remember your preferences and the choices you make, to personalise your experience of using the {!$Label.Cookie_Preferences_Service_Name}.
+            </p>
+            <apex:repeat value="{!StrictlyNecessaryCookieDefinitions}" var="def">
+                <h3 class="govuk-heading-m">
+                    {!def.Label}
+                </h3>
+                
+                <apex:outputText styleClass="govuk-body" value="{!def.Description__c}" escape="true" />
+                <br /><br /><br />
+                <div style="margin-left:15px;">
+                    
+                    <table class="govuk-table">
+                        <thead class="govuk-table__head">
+                            <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header">Name</th>
+                                <th scope="col" class="govuk-table__header">Purpose</th>
+                                <th scope="col" class="govuk-table__header">Expires</th>
+                            </tr>
+                        </thead>
+                        <tbody class="govuk-table__body">
+                            <apex:repeat value="{!def.Cookies__r}" var="cookie">
+                                <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell">{!cookie.Label}</td>
+                                    <td class="govuk-table__cell">{!cookie.Purpose__c}</td>
+                                    <td class="govuk-table__cell">{!cookie.Expiration__c}</td>
+                                </tr>
+                            </apex:repeat>
+                        </tbody>
+                    </table>
+                </div>
+            </apex:repeat>   
+            <br /><br />     
+        </apex:outputText>
+        
+        
+        <apex:outputText rendered="{!SettingsCookieDefinitions.size > 0}">
+            <h2 class="govuk-heading-l">Cookies that remember your settings</h2>
+            <apex:repeat value="{!SettingsCookieDefinitions}" var="def">
+                <h3 class="govuk-heading-m">
+                    {!def.Label}
+                </h3>
+                
+                <apex:outputText styleClass="govuk-body" value="{!def.Description__c}" escape="true" />
+                <br /><br /><br />
+                <table class="govuk-table" style="margin-left:15px;">
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header">Name</th>
+                            <th scope="col" class="govuk-table__header">Purpose</th>
+                            <th scope="col" class="govuk-table__header">Expires</th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <apex:repeat value="{!def.Cookies__r}" var="cookie">
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">{!cookie.Label}</td>
+                                <td class="govuk-table__cell">{!cookie.Purpose__c}</td>
+                                <td class="govuk-table__cell">{!cookie.Expiration__c}</td>
+                            </tr>
+                        </apex:repeat>
+                    </tbody>
+                </table>
+            </apex:repeat>
+            <br /><br />
+        </apex:outputText>
+        
+        
+        <apex:outputText rendered="{!MeasuringCookieDefinitions.size > 0}">
+            <h2 class="govuk-heading-l">Cookies that measure website use</h2>
+            <apex:repeat value="{!MeasuringCookieDefinitions}" var="def">
+                <h3 class="govuk-heading-m">
+                    {!def.Label}
+                </h3>
+                
+                <apex:outputText styleClass="govuk-body" value="{!def.Description__c}" escape="true" />
+                
+                <p class="govuk-body">
+                    We use Google Analytics software (Universal Analytics) to collect anonymised information about how you use this site. We do this to help make sure the site is meeting the needs of its users and to help us make improvements. We do not allow Google to use or share the data about how you use this site.<br /><br />
+                    
+                    Google Analytics stores information about:
+                </p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>how you got to the site</li>
+                    <li>the pages you visit on this site and how long you spend on them</li>
+                    <li>what you click on while you’re visiting the site</li>
+                </ul>
+                <p class="govuk-body">
+                    Google Analytics sets the following cookies:
+                </p>
+                <br />
+                <table class="govuk-table" style="margin-left:15px;">
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header">Name</th>
+                            <th scope="col" class="govuk-table__header">Purpose</th>
+                            <th scope="col" class="govuk-table__header">Expires</th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <apex:repeat value="{!def.Cookies__r}" var="cookie">
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">{!cookie.Label}</td>
+                                <td class="govuk-table__cell">{!cookie.Purpose__c}</td>
+                                <td class="govuk-table__cell">{!cookie.Expiration__c}</td>
+                            </tr>
+                        </apex:repeat>
+                    </tbody>
+                </table>
+            </apex:repeat>
+            <br /><br />
+        </apex:outputText>
+        
+        <apex:outputText rendered="{!CommsCookieDefinitions.size > 0}">
+            <h2 class="govuk-heading-l">Cookies that help with our communications</h2>
+            <apex:repeat value="{!CommsCookieDefinitions}" var="def">
+                <h3 class="govuk-heading-m">
+                    {!def.Label}
+                </h3>
+                
+                <apex:outputText styleClass="govuk-body" value="{!def.Description__c}" escape="true" />
+                
+                <br /><br /><br />
+                <table class="govuk-table" style="margin-left:15px;">
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header">Name</th>
+                            <th scope="col" class="govuk-table__header">Purpose</th>
+                            <th scope="col" class="govuk-table__header">Expires</th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <apex:repeat value="{!def.Cookies__r}" var="cookie">
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">{!cookie.Label}</td>
+                                <td class="govuk-table__cell">{!cookie.Purpose__c}</td>
+                                <td class="govuk-table__cell">{!cookie.Expiration__c}</td>
+                            </tr>
+                        </apex:repeat>
+                    </tbody>
+                </table>
+            </apex:repeat>
+            
+        </apex:outputText>
+    </apex:form>
+    
+    <h2 class="govuk-heading-l">Change your cookie options</h2>        
+    <p class="govuk-body">
+        You can <a href="{!$Label.Cookie_Preferences_Preferences_URL}">change which cookies you're happy for us to use</a>.<br /><br />
+        Last updated: {!$Label.Cookie_Preferences_Review_Date}
+    </p>
+</apex:component>

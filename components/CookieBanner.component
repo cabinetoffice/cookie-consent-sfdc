@@ -1,0 +1,231 @@
+<apex:component controller="CookiePreferencesController">
+    <apex:outputText rendered="{!ShowBanner}">
+        
+        <style class="text/css">
+            /* 
+            Some services aren't using the most up to date version of the Gov.uk Design
+            system and thus don't have secondary buttons.
+            */
+            
+            #cookieBannerContainer
+            {
+            position:sticky;
+            top:0px;
+            left:0px;
+            z-index:9999;
+            }
+            
+            #cookieBanner
+            {
+            background-color:#F8F8F8;
+            padding:20px 10px 0px 10px;
+            font-family: HelveticaNeue, sans-serif !important;
+            font-size:16px !important;
+            }
+            
+            .cookie-govuk-button {
+            font-family: HelveticaNeue,sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-weight: 400;
+            font-size: 16px !important;
+            font-size: 1rem;
+            line-height: 1.1875;
+            box-sizing: border-box;
+            display: inline-block;
+            position: relative;
+            width: 100%;
+            margin-top: 0;
+            margin-bottom: 22px;
+            padding: 7px 10px;
+            border: 2px solid rgba(0,0,0,0);
+            border-radius: 0;
+            color: #fff;
+            background-color: #00823b;
+            box-shadow: 0 2px 0 #003618;
+            text-align: center;
+            vertical-align: top;
+            cursor: pointer;
+            -webkit-appearance: none
+            }
+            
+            @media print {
+            .cookie-govuk-button {
+            font-family: sans-serif
+            }
+            }
+            
+            @media (min-width: 40.0625em) {
+            .cookie-govuk-button {
+            font-size:19px;
+            font-size: 1.1875rem;
+            line-height: 1
+            }
+            }
+            
+            @media print {
+            .cookie-govuk-button {
+            font-size: 14pt;
+            line-height: 19px
+            }
+            }
+            
+            .cookie-govuk-button:focus {
+            outline: 3px solid #ffbf47;
+            outline-offset: 0
+            }
+            
+            @media (min-width: 40.0625em) {
+            .cookie-govuk-button {
+            margin-bottom:32px;
+            width: auto
+            }
+            }
+            
+            .cookie-govuk-button:active,.cookie-govuk-button:hover,.cookie-govuk-button:link,.cookie-govuk-button:visited {
+            color: #fff;
+            text-decoration: none
+            }
+            
+            .cookie-govuk-button::-moz-focus-inner {
+            padding: 0;
+            border: 0
+            }
+            
+            .cookie-govuk-button:focus,.cookie-govuk-button:hover {
+            background-color: #00692f
+            }
+            
+            .cookie-govuk-button:active {
+            top: 2px;
+            box-shadow: none
+            }
+            
+            .cookie-govuk-button:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            bottom: -4px;
+            left: -2px;
+            background: rgba(0,0,0,0)
+            }
+            
+            .cookie-govuk-button:active:before {
+            top: -4px
+            }
+            
+            .cookie-govuk-button--disabled,.cookie-govuk-button[disabled=disabled],.cookie-govuk-button[disabled] {
+            opacity: .5;
+            background: #00823b
+            }
+            
+            .cookie-govuk-button--disabled:hover,.cookie-govuk-button[disabled=disabled]:hover,.cookie-govuk-button[disabled]:hover {
+            background-color: #00823b;
+            cursor: default
+            }
+            
+            .cookie-govuk-button--disabled:focus,.cookie-govuk-button[disabled=disabled]:focus,.cookie-govuk-button[disabled]:focus {
+            outline: none
+            }
+            
+            .cookie-govuk-button--disabled:active,.cookie-govuk-button[disabled=disabled]:active,.cookie-govuk-button[disabled]:active {
+            top: 0;
+            box-shadow: 0 2px 0 #003618
+            }
+            
+            .cookie-govuk-button--start {
+            font-weight: 700;
+            font-size: 18px;
+            font-size: 1.125rem;
+            line-height: 1;
+            min-height: auto;
+            padding: 8px 40px 8px 15px;
+            background-image: url(/assets/images/icon-pointer.png);
+            background-repeat: no-repeat;
+            background-position: 100% 50%
+            }
+            
+            @media (min-width: 40.0625em) {
+            .cookie-govuk-button--start {
+            font-size:24px;
+            font-size: 1.5rem;
+            line-height: 1
+            }
+            }
+            
+            @media print {
+            .cookie-govuk-button--start {
+            font-size: 18pt;
+            line-height: 1
+            }
+            }
+            
+            @media only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio:2),only screen and (min-device-pixel-ratio:2),only screen and (min-resolution:2dppx),only screen and (min-resolution:192dpi) {
+            .cookie-govuk-button--start {
+            background-image:url(/assets/images/icon-pointer-2x.png);
+            background-size: 30px 19px
+            }
+            }
+            
+            .cookie-govuk-button,.cookie-govuk-button--start {
+            padding-top: 9px;
+            padding-bottom: 6px
+            }
+            
+            .cookie-govuk-button--secondary {
+            background-color: #f3f2f1;
+            box-shadow: 0 2px 0 #929191
+            }
+            
+            .cookie-govuk-button--secondary,
+            .govuk-button--secondary:active,
+            .govuk-button--secondary:hover,
+            .govuk-button--secondary:link,
+            .govuk-button--secondary:visited {
+            color: #0b0c0c !important
+            }
+            
+            .cookie-govuk-button--secondary:hover {
+            background-color: #dbdad9
+            }
+            
+            .cookie-govuk-button--secondary:hover[disabled] {
+            background-color: #f3f2f1
+            }
+        </style>
+        
+        <script type="text/javascript">
+        function toggleCookieBanner()
+        {
+            var ele = document.getElementById("cookieBannerContainer");
+            ele.style.display = ele.style.display != 'none' ? 'none' : 'block';
+        }
+        </script>
+        
+        <div id="cookieBannerContainer">
+            <div id="cookieBanner">
+                <div class="govuk-width-container">
+                    
+                    <p class="govuk-body">
+                        {!$Label.Cookie_Preferences_Service_Name} uses cookies to make this site work better for you. <a href="{!$Page.CookiePolicy}" class="govuk-link">Some of these cookies are essential to how the site functions and others are optional</a>. Optional
+                        cookies help us remember your settings, measure your use of the site, and personalise how we communicate with you. Any data collected is anonymised and we do not set optional cookies unless you consent.
+                    </p>
+                    
+                    <apex:form >
+                        &nbsp;&nbsp;
+                        <apex:commandLink styleClass="cookie-govuk-button cookie-govuk-button--secondary" html-data-module="govuk-button" oncomplete="toggleCookieBanner()" action="{!acceptAll}">
+                            Accept all cookies
+                        </apex:commandLink>
+                        &nbsp;&nbsp;
+                        
+                        <a class="cookie-govuk-button cookie-govuk-button cookie-govuk-button--secondary" data-module="govuk-button" href="{!$Page.CookiePreferences}">
+                            Set cookie preferences
+                        </a>
+                    </apex:form>
+                </div>
+            </div>
+        </div>
+    </apex:outputText>
+</apex:component>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Category__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Category</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Strictly necessary cookies</fullName>
+                    <default>true</default>
+                    <label>Strictly necessary cookies</label>
+                </value>
+                <value>
+                    <fullName>Cookies that remember your settings</fullName>
+                    <default>false</default>
+                    <label>Cookies that remember your settings</label>
+                </value>
+                <value>
+                    <fullName>Cookies that measure website use</fullName>
+                    <default>false</default>
+                    <label>Cookies that measure website use</label>
+                </value>
+                <value>
+                    <fullName>Cookies that help with our communications</fullName>
+                    <default>false</default>
+                    <label>Cookies that help with our communications</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Description (HTML)</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Display_Order__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Display Order</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mandatory__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Mandatory</label>
+        <type>Checkbox</type>
+    </fields>
+    <label>Cookie Section</label>
+    <pluralLabel>Cookie Sections</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>
