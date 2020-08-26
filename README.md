@@ -11,13 +11,13 @@ You can do this using a tool like SFDX or the Force.com CLI.
 ### 2. Embed the CookieBanner component in either your Site template or each of your pages.
 You can see an example of this in pages/ExampleCookieSandbox.vfp. It should look something like this when deployed:
 
-!(Example image of how the cookie banner looks)(https://jmp.sh/l55cyQa+/Screen+Shot+2020-08-26+at+11.49.42+AM.png)
+![Example image of how the cookie banner looks](https://jmp.sh/l55cyQa+/Screen+Shot+2020-08-26+at+11.49.42+AM.png)
 
 ### 3. Create a CookiePreferences and CookiePolicy page.
 Typically you should be able to just use your ordinary site template, setting the content as <c:CookiePreferences /> and <c:CookiePolicy /> respectively. CookiePreferences lets a user select which cookie types they want to enable, whilst CookiePolicy details the cookies used by the site and any supporting policies around them.
 
 ### 4. Configure the Cookie Preferences custom labels to your organisation
-!(A list of the cookie preferences custom labels)(https://jmp.sh/FI1z7jG+/Screen+Shot+2020-08-26+at+11.55.05+AM.png)
+![A list of the cookie preferences custom labels](https://jmp.sh/FI1z7jG+/Screen+Shot+2020-08-26+at+11.55.05+AM.png)
 
 Cookie Preferences - Policy Page URL, Preferences URL, and Privacy Notice URL should be links (absolute or relative) to the cookie preferences and policy pages you set up in step 3, and to your site-wide privacy notice.
 
@@ -32,4 +32,4 @@ Cabinet Office DATT maintains several other cookie consent solutions for other p
 * Wordpress: https://github.com/cabinetoffice/cookie-consent-wp
 * NodeJS: https://github.com/cabinetoffice/co-cookie-consent
 
-If you have any questions, please feel free to reach out to me at kane.holbrook@cabinetoffice.gov.uk.
+If you have any questions, please feel free to reach out to kane.holbrook@cabinetoffice.gov.uk.
