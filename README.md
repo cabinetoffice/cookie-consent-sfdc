@@ -17,7 +17,7 @@ You can see an example of this in pages/ExampleCookieSandbox.vfp. It should look
 Typically you should be able to just use your ordinary site template, setting the content as <c:CookiePreferences /> and <c:CookiePolicy /> respectively. CookiePreferences lets a user select which cookie types they want to enable, whilst CookiePolicy details the cookies used by the site and any supporting policies around them.
 
 ### 4. Configure the Cookie Preferences custom labels to your organisation
-![A list of the cookie preferences custom labels](https://jmp.sh/FI1z7jG+/Screen+Shot+2020-08-26+at+11.55.05+AM.png)
+![A list of the cookie preferences custom labels](https://github.com/cabinetoffice/cookie-consent-sfdc/blob/master/preferences.png)
 
 Cookie Preferences - Policy Page URL, Preferences URL, and Privacy Notice URL should be links (absolute or relative) to the cookie preferences and policy pages you set up in step 3, and to your site-wide privacy notice.
 
