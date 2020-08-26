@@ -11,7 +11,7 @@ You can do this using a tool like SFDX or the Force.com CLI.
 ### 2. Embed the CookieBanner component in either your Site template or each of your pages.
 You can see an example of this in pages/ExampleCookieSandbox.vfp. It should look something like this when deployed:
 
-![Example image of how the cookie banner looks](https://jmp.sh/l55cyQa+/Screen+Shot+2020-08-26+at+11.49.42+AM.png)
+![Example image of how the cookie banner looks](https://github.com/cabinetoffice/cookie-consent-sfdc/blob/master/banner.png)
 
 ### 3. Create a CookiePreferences and CookiePolicy page.
 Typically you should be able to just use your ordinary site template, setting the content as <c:CookiePreferences /> and <c:CookiePolicy /> respectively. CookiePreferences lets a user select which cookie types they want to enable, whilst CookiePolicy details the cookies used by the site and any supporting policies around them.
