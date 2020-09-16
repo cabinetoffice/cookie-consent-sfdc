@@ -206,7 +206,7 @@
         
         <div id="cookieBannerContainer">
             <div id="cookieBanner">
-                <div class="govuk-width-container">
+                <div class="govuk-width-container" style="max-width:960px; margin-left:auto; margin-right:auto;">
                     
                     <p class="govuk-body">
                         {!$Label.Cookie_Preferences_Service_Name} uses cookies to make this site work better for you. <a href="{!$Page.CookiePolicy}" class="govuk-link">Some of these cookies are essential to how the site functions and others are optional</a>. Optional
