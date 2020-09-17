@@ -3,23 +3,23 @@
         Preferences
     </h1>
     
-    <p class="govuk-heading-m heading-medium">
+    <p class="govuk-heading-m heading-medium" style="display:block;">
         Cookies on {!$Label.Cookie_Preferences_Service_Name}
     </p><br /><br />
     
-    <h2 class="govuk-heading-l heading-large">Cookie settings</h2>
+    <h2 class="govuk-heading-l heading-large" style="display:block;">Cookie settings</h2>
     <p class="govuk-body">
         {!$Label.Cookie_Preferences_Service_Description}
     </p>
     <br /><br />
     <apex:form >
         <apex:outputText rendered="{!StrictlyNecessaryCookieDefinitions.size > 0}">
-            <h2 class="govuk-heading-l heading-large">Strictly necessary cookies</h2>
+            <h2 class="govuk-heading-l heading-large" style="display:block;">Strictly necessary cookies</h2>
             <p class="govuk-body">
                 These essential cookies do things like:
             </p>
             
-            <ul class="govuk-list govuk-list--bullet">
+            <ul class="govuk-list govuk-list--bullet list list-bullet">
                 <li class="govuk-!-margin-left-2">remember the notifications you've seen so we do not show them to you again</li>
                 <li class="govuk-!-margin-left-2">remember your progress through a form</li>
                 <li class="govuk-!-margin-left-2">enable core functionality such as website registration, security, network management and accessibility</li>
@@ -30,7 +30,7 @@
             </p>
             
             <apex:repeat value="{!StrictlyNecessaryCookieDefinitions}" var="def">
-                <h3 class="govuk-heading-m heading-medium">
+                <h3 class="govuk-heading-m heading-medium" style="display:block;">
                     {!def.Label}
                 </h3>
                 
@@ -42,16 +42,16 @@
         
         
         <apex:outputText rendered="{!SettingsCookieDefinitions.size > 0}">
-            <h2 class="govuk-heading-l heading-large">Cookies that remember your settings</h2>
+            <h2 class="govuk-heading-l heading-large" style="display:block;">Cookies that remember your settings</h2>
             <apex:repeat value="{!SettingsCookieDefinitions}" var="def">
-                <h3 class="govuk-heading-m heading-medium">
+                <h3 class="govuk-heading-m heading-medium" style="display:block;">
                     {!def.Label}
                 </h3>
                 
                 <apex:outputText styleClass="govuk-body" value="{!def.Description__c}" escape="true" />
                 <br /><br /><br />
-                <div class="govuk-form-group">
-                    <h4 class="govuk-heading-s heading-small">
+                <div class="govuk-form-group form-group">
+                    <h4 class="govuk-heading-s heading-small" style="padding-top:10px; display:block;">
                         Opt in to all cookies that remember your settings
                     </h4>
                     
@@ -64,9 +64,9 @@
         
         
         <apex:outputText rendered="{!MeasuringCookieDefinitions.size > 0}">
-            <h2 class="govuk-heading-l heading-large">Cookies that measure website use</h2>
+            <h2 class="govuk-heading-l heading-large" style="display:block;">Cookies that measure website use</h2>
             <apex:repeat value="{!MeasuringCookieDefinitions}" var="def">
-                <h3 class="govuk-heading-m heading-medium">
+                <h3 class="govuk-heading-m heading-medium" style="display:block;">
                     {!def.Label}
                 </h3>
                 
@@ -78,42 +78,49 @@
                     Google Analytics stores information about:
                 </p>
                 
-                <ul class="govuk-list govuk-list--bullet">
+                <ul class="govuk-list govuk-list--bullet list list-bullet">
                     <li>how you got to the site</li>
                     <li>the pages you visit on this site and how long you spend on them</li>
                     <li>what you click on while you’re visiting the site</li>
                 </ul>
                 
-                <div class="govuk-form-group">
-                    <h4 class="govuk-heading-s heading-small">
+                <div class="govuk-form-group form-group">
+                    <h4 class="govuk-heading-s heading-small" style="padding-top:10px; display:block;">
                         Opt in to all cookies that measure website use
                     </h4>
                     
+					<fieldset>
                     <apex:inputHidden id="f_measuring" value="{!measuringCookiesEnabled}" />
                     <c:GovukRadio manualValues="On|Off" manualDefault="Off" inline="true" destid="{!$Component.f_measuring}" />
+					</fieldset>
                 </div>
                 <br />
             </apex:repeat>
                     </apex:outputText>
         
         <apex:outputText rendered="{!CommsCookieDefinitions.size > 0}">
-            <h2 class="govuk-heading-l heading-large">Cookies that help with our communications</h2>
+            <h2 class="govuk-heading-l heading-large" style="display:block;">Cookies that help with our communications</h2>
             <apex:repeat value="{!CommsCookieDefinitions}" var="def">
-                <h3 class="govuk-heading-m heading-medium">
+                <h3 class="govuk-heading-m heading-medium" style="display:block;">
                     {!def.Label}
                 </h3>
-                
-                <apex:outputText styleClass="govuk-body" value="{!def.Description__c}" escape="true" />                
-                
-                <apex:inputHidden id="f_comms" value="{!commsCookiesEnabled}" />
-                <c:GovukRadio manualValues="On|Off" manualDefault="Off" inline="true" destid="{!$Component.f_comms}" />
-            
+				
+				
+				<apex:outputText styleClass="govuk-body" value="{!def.Description__c}" escape="true" />                
+				
+				<div class="govuk-form-group form-group">
+					<apex:inputHidden id="f_comms" value="{!commsCookiesEnabled}" />
+					<fieldset>
+					<c:GovukRadio manualValues="On|Off" manualDefault="Off" inline="true" destid="{!$Component.f_comms}" />
+					</fieldset>
+				
+				</div>
             </apex:repeat>            
         </apex:outputText>
 
 		<a class="govuk-link" href="{!$Label.Cookie_Preferences_Policy_Page_URL}">Find out more about cookies</a>        
         <br /><br/>
-        <apex:commandLink styleClass="govuk-button" action="{!save}">
+        <apex:commandLink styleClass="button govuk-button" action="{!save}">
             Save changes  
         </apex:commandLink>
     </apex:form>

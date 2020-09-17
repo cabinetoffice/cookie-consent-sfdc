@@ -3,7 +3,7 @@
         Cookie Policy
     </h1>
     
-    <h2 class="govuk-heading-l heading-large">
+    <h2 class="govuk-heading-l heading-large" style="display:block;">
         Details about cookies on {!$Label.Cookie_Preferences_Service_Name}
     </h2>
     <p class="govuk-body">
@@ -26,12 +26,12 @@
     
     <apex:form >
         <apex:outputText rendered="{!StrictlyNecessaryCookieDefinitions.size > 0}">
-            <h2 class="govuk-heading-l heading-large">Strictly necessary cookies</h2>
+            <h2 class="govuk-heading-l heading-large" style="display:block;">Strictly necessary cookies</h2>
             <p class="govuk-body">
                 These cookies do things like remember your preferences and the choices you make, to personalise your experience of using the {!$Label.Cookie_Preferences_Service_Name}.
             </p>
             <apex:repeat value="{!StrictlyNecessaryCookieDefinitions}" var="def">
-                <h3 class="govuk-heading-m heading-medium">
+                <h3 class="govuk-heading-m heading-medium" style="display:block;">
                     {!def.Label}
                 </h3>
                 
@@ -64,9 +64,9 @@
         
         
         <apex:outputText rendered="{!SettingsCookieDefinitions.size > 0}">
-            <h2 class="govuk-heading-l heading-large">Cookies that remember your settings</h2>
+            <h2 class="govuk-heading-l heading-large" style="display:block;">Cookies that remember your settings</h2>
             <apex:repeat value="{!SettingsCookieDefinitions}" var="def">
-                <h3 class="govuk-heading-m heading-medium">
+                <h3 class="govuk-heading-m heading-medium" style="display:block;">
                     {!def.Label}
                 </h3>
                 
@@ -96,9 +96,9 @@
         
         
         <apex:outputText rendered="{!MeasuringCookieDefinitions.size > 0}">
-            <h2 class="govuk-heading-l heading-large">Cookies that measure website use</h2>
+            <h2 class="govuk-heading-l heading-large" style="display:block;">Cookies that measure website use</h2>
             <apex:repeat value="{!MeasuringCookieDefinitions}" var="def">
-                <h3 class="govuk-heading-m heading-medium">
+                <h3 class="govuk-heading-m heading-medium" style="display:block;">
                     {!def.Label}
                 </h3>
                 
@@ -109,7 +109,7 @@
                     
                     Google Analytics stores information about:
                 </p>
-                <ul class="govuk-list govuk-list--bullet">
+                <ul class="govuk-list govuk-list--bullet list list-bullet">
                     <li>how you got to the site</li>
                     <li>the pages you visit on this site and how long you spend on them</li>
                     <li>what you click on while you’re visiting the site</li>
@@ -143,7 +143,7 @@
         <apex:outputText rendered="{!CommsCookieDefinitions.size > 0}">
             <h2 class="govuk-heading-l">Cookies that help with our communications</h2>
             <apex:repeat value="{!CommsCookieDefinitions}" var="def">
-                <h3 class="govuk-heading-m heading-medium">
+                <h3 class="govuk-heading-m heading-medium" style="display:block;">
                     {!def.Label}
                 </h3>
                 
@@ -173,7 +173,7 @@
         </apex:outputText>
     </apex:form>
     
-    <h2 class="govuk-heading-l heading-large">Change your cookie options</h2>        
+    <h2 class="govuk-heading-l heading-large" style="display:block;">Change your cookie options</h2>        
     <p class="govuk-body">
         You can <a href="{!$Label.Cookie_Preferences_Preferences_URL}">change which cookies you're happy for us to use</a>.<br /><br />
         Last updated: {!$Label.Cookie_Preferences_Review_Date}
