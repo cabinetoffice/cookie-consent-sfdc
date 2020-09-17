@@ -1,7 +1,7 @@
 # cookie-consent-sfdc
 This utility exposes a set of Salesforce components themed in the Gov.uk style for showing a banner to obtain and subsequently configure cookie consent preferences. 
 
-NOTE: It still needs a Salesforce developer (or at least someone who is comfortable with Visualforce) to configure.
+NOTE: It still needs a Salesforce developer (or at least someone who is comfortable with writing basic Visualforce) to configure.
 
 ## Steps for importing
 
