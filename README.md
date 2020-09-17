@@ -24,6 +24,8 @@ Cookie Preferences - Policy Page URL, Preferences URL, and Privacy Notice URL sh
 ### 5. If you have any custom cookies, document them, and if they are not strictly necessary, wrap them in an rendered statement.
 You can document them via going to Setup > Custom Metadata Types > Cookies > Manage. If your cookie is not strictly necessary, you can use the CookiePreferencesExtension class to determine whether or not the user has opted in to your specific class of cookie consent.
 
+### 6. You will need to add a link to your cookie preferences page somewhere on your template so that users can still configure their cookies after they have dismissed the banner.
+
 ## Additional guidance
 You can find additional information around how to present cookie consent policies on the Wordpress cookie consent Github repository, stored at https://github.com/cabinetoffice/cookie-consent-wp.
 
