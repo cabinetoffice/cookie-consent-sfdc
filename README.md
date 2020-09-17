@@ -8,7 +8,7 @@ NOTE: It still needs a Salesforce developer (or at least someone who is comforta
 ### 1. Import this package into your Salesforce organisation.
 You can do this using a tool like SFDX or the Force.com CLI. When using the Force.com CLI, I've found it works best if you deploy in the following order: objects, labels, customMetadata, staticresources, classes, components, pages.
 
-### 2. Embed the CookieBanner component in either your Site template or each of your pages.
+### 2. Embed the CookieBanner component either into your site template or into each of your pages.
 You can see an example of this in pages/ExampleCookieSandbox.vfp. It should look something like this when deployed:
 
 ![Example image of how the cookie banner looks](https://github.com/cabinetoffice/cookie-consent-sfdc/blob/master/banner.png)
