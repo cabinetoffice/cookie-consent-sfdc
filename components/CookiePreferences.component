@@ -1,20 +1,20 @@
-<apex:component controller="CookiePreferencesController">
-    <h1 class="govuk-heading-xl">
+<apex:component controller="CookiePreferences">
+    <h1 class="govuk-heading-xl heading-xlarge" style="padding-top:10px; display:block;">
         Preferences
     </h1>
     
-    <p class="govuk-heading-m">
+    <p class="govuk-heading-m heading-medium">
         Cookies on {!$Label.Cookie_Preferences_Service_Name}
     </p><br /><br />
     
-    <h2 class="govuk-heading-l">Cookie settings</h2>
+    <h2 class="govuk-heading-l heading-large">Cookie settings</h2>
     <p class="govuk-body">
         {!$Label.Cookie_Preferences_Service_Description}
     </p>
     <br /><br />
     <apex:form >
         <apex:outputText rendered="{!StrictlyNecessaryCookieDefinitions.size > 0}">
-            <h2 class="govuk-heading-l">Strictly necessary cookies</h2>
+            <h2 class="govuk-heading-l heading-large">Strictly necessary cookies</h2>
             <p class="govuk-body">
                 These essential cookies do things like:
             </p>
@@ -30,7 +30,7 @@
             </p>
             
             <apex:repeat value="{!StrictlyNecessaryCookieDefinitions}" var="def">
-                <h3 class="govuk-heading-m">
+                <h3 class="govuk-heading-m heading-medium">
                     {!def.Label}
                 </h3>
                 
@@ -42,16 +42,16 @@
         
         
         <apex:outputText rendered="{!SettingsCookieDefinitions.size > 0}">
-            <h2 class="govuk-heading-l">Cookies that remember your settings</h2>
+            <h2 class="govuk-heading-l heading-large">Cookies that remember your settings</h2>
             <apex:repeat value="{!SettingsCookieDefinitions}" var="def">
-                <h3 class="govuk-heading-m">
+                <h3 class="govuk-heading-m heading-medium">
                     {!def.Label}
                 </h3>
                 
                 <apex:outputText styleClass="govuk-body" value="{!def.Description__c}" escape="true" />
                 <br /><br /><br />
                 <div class="govuk-form-group">
-                    <h4 class="govuk-heading-s">
+                    <h4 class="govuk-heading-s heading-small">
                         Opt in to all cookies that remember your settings
                     </h4>
                     
@@ -64,9 +64,9 @@
         
         
         <apex:outputText rendered="{!MeasuringCookieDefinitions.size > 0}">
-            <h2 class="govuk-heading-l">Cookies that measure website use</h2>
+            <h2 class="govuk-heading-l heading-large">Cookies that measure website use</h2>
             <apex:repeat value="{!MeasuringCookieDefinitions}" var="def">
-                <h3 class="govuk-heading-m">
+                <h3 class="govuk-heading-m heading-medium">
                     {!def.Label}
                 </h3>
                 
@@ -85,7 +85,7 @@
                 </ul>
                 
                 <div class="govuk-form-group">
-                    <h4 class="govuk-heading-s">
+                    <h4 class="govuk-heading-s heading-small">
                         Opt in to all cookies that measure website use
                     </h4>
                     
@@ -97,9 +97,9 @@
                     </apex:outputText>
         
         <apex:outputText rendered="{!CommsCookieDefinitions.size > 0}">
-            <h2 class="govuk-heading-l">Cookies that help with our communications</h2>
+            <h2 class="govuk-heading-l heading-large">Cookies that help with our communications</h2>
             <apex:repeat value="{!CommsCookieDefinitions}" var="def">
-                <h3 class="govuk-heading-m">
+                <h3 class="govuk-heading-m heading-medium">
                     {!def.Label}
                 </h3>
                 
@@ -111,7 +111,7 @@
             </apex:repeat>            
         </apex:outputText>
 
-            <a class="govuk-link" href="{!$Label.Cookie_Preferences_Policy_Page_URL}">Find out more about cookies</a>        
+		<a class="govuk-link" href="{!$Label.Cookie_Preferences_Policy_Page_URL}">Find out more about cookies</a>        
         <br /><br/>
         <apex:commandLink styleClass="govuk-button" action="{!save}">
             Save changes  

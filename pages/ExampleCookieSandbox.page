@@ -1,4 +1,4 @@
-<apex:page applyHtmlTag="false" applyBodyTag="false" standardStylesheets="false" docType="html-5.0" showHeader="false" sidebar="false" cache="false">
+<apex:page standardController="Account" applyHtmlTag="false" applyBodyTag="false" standardStylesheets="false" docType="html-5.0" showHeader="false" sidebar="false" cache="false" extensions="CookiePreferences">
     <html>
         <head>
             <title>Cookie Sandbox</title>
@@ -69,7 +69,12 @@
                     </div>
                 </div>
             </footer>
-            
+			
+			<apex:outputText rendered="{!measuringCookiesEnabled}">
+				<script>
+				// ------------> (CODE THAT SETS COOKIES HERE) <------------------
+				</script>
+            </apex:outputText>
             
             <script src="{!URLFOR($Resource.govuk, 'javascript/govuk-frontend-2.4.1.min.js')}"></script>
             <script>window.GOVUKFrontend.initAll()</script>

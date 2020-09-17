@@ -3,11 +3,8 @@ public class CookiePreferencesTest
 {
 	public static testMethod void Test()
     {
-        CookiePreferencesController ctl = new CookiePreferencesController();
-        
-        PageReference pg = Page.CookiePreferences;
-        Test.setCurrentPage(pg);
-        
+        CookiePreferences ctl = new CookiePreferences();
+                
         system.assert(ctl.getShowBanner());
         
         ctl.acceptAll();

@@ -1,10 +1,17 @@
-public class CookiePreferencesController
+public class CookiePreferences
 {
     public string settingsCookiesEnabled { get; set; }
     public string measuringCookiesEnabled { get; set; }
     public string commsCookiesEnabled { get; set; }
     
-	public CookiePreferencesController()
+	public CookiePreferences()
+    {
+        settingsCookiesEnabled = hasCookiePreference('settingsCookies') ? 'On' : 'Off';
+        measuringCookiesEnabled = hasCookiePreference('measuringCookies') ? 'On' : 'Off';
+        commsCookiesEnabled = hasCookiePreference('commsCookies') ? 'On' : 'Off';
+    }
+    
+	public CookiePreferences(object stc)
     {
         settingsCookiesEnabled = hasCookiePreference('settingsCookies') ? 'On' : 'Off';
         measuringCookiesEnabled = hasCookiePreference('measuringCookies') ? 'On' : 'Off';
